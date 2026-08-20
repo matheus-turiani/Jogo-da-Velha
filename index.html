@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Velha - IA com Minimax e Placar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="lado-esquerdo">
+      <h1>Jogo da Velha</h1>
+      <p class="subtitulo">IA com Minimax</p>
+
+      <div class="secao">
+        <label class="label-secao">Dificuldade da IA:</label>
+        <div class="dificuldades" id="dificuldades">
+          <button class="btn-dif" data-dif="Fácil">Fácil</button>
+          <button class="btn-dif ativo" data-dif="Mediano">Mediano</button>
+          <button class="btn-dif" data-dif="Difícil">Difícil</button>
+          <button class="btn-dif" data-dif="Minimax">Minimax</button>
+        </div>
+      </div>
+
+      <div class="status" id="status">Sua vez (X)</div>
+      <div class="placar" id="placar">Jogador: 0 | IA: 0 | Empates: 0</div>
+
+      <div class="tabuleiro" id="tabuleiro">
+     
+      </div>
+
+      <div class="botoes-acao">
+        <button class="btn-acao" id="btn-reiniciar">Reiniciar</button>
+        <button class="btn-acao" id="btn-nova">Nova partida</button>
+      </div>
+    </div>
+
+    <div class="separador"></div>
+
+    <div class="lado-direito">
+      <div class="titulo-painel" id="titulo-painel">Aguardando sua jogada...</div>
+      <canvas id="painel-neuronios" width="320" height="320"></canvas>
+      <p class="legenda">
+        Painel de neurônios: a IA avalia cada posição com Minimax.<br>
+        <span class="verde">Verde</span> = boa para a IA ·
+        <span class="vermelho">Vermelho</span> = ruim para a IA ·
+        <span class="dourado">Dourado</span> = jogada escolhida
+      </p>
+    </div>
+  </div>
+
+  <script src="minimax.js"></script>
+  <script src="painel.js"></script>
+  <script src="jogo.js"></script>
+</body>
+</html>

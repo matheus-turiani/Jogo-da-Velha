@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: linear-gradient(145deg, #1e1633 0%, #2b1b4d 50%, #3a1f5c 100%);
+  min-height: 100vh;
+  color: #e8e8e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  background: rgba(30, 30, 50, 0.85);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  max-width: 900px;
+  width: 100%;
+}
+
+.lado-esquerdo {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lado-direito {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.separador {
+  width: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  align-self: stretch;
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.subtitulo {
+  font-size: 0.9rem;
+  color: #a0a0c0;
+  margin-top: -8px;
+}
+
+.label-secao {
+  font-size: 0.85rem;
+  color: #b0b0d0;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.dificuldades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-dif {
+  padding: 8px 14px;
+  border: 2px solid #4a4a6a;
+  background: #2a2a40;
+  color: #ccc;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-dif:hover {
+  border-color: #6a6a9a;
+  background: #3a3a55;
+}
+
+.btn-dif.ativo {
+  border-color: #a855f7;
+  background: #3b1d66;
+  color: #d8b4fe;
+}
+
+.status {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 10px 14px;
+  background: rgba(168, 85, 247, 0.12);
+  border-radius: 8px;
+  border-left: 4px solid #a855f7;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.placar {
+  font-size: 0.95rem;
+  color: #c0c0e0;
+  padding: 6px 0;
+}
+
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.celula {
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 10px;
+  background: #252540;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.celula:hover:not(:disabled) {
+  background: #353560;
+  transform: scale(1.03);
+}
+
+.celula:disabled {
+  cursor: default;
+  opacity: 0.9;
+}
+
+.celula.x {
+  color: #c084fc;
+}
+
+.celula.o {
+  color: #fb923c;
+}
+
+.botoes-acao {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.btn-acao {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #3a3a60;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-acao:hover {
+  background: #4a4a80;
+}
+
+.titulo-painel {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  min-height: 40px;
+  color: #d0d0f0;
+}
+
+#painel-neuronios {
+  background: #1a1a2e;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legenda {
+  font-size: 0.75rem;
+  color: #9090b0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.legenda .verde { color: #4ade80; }
+.legenda .vermelho { color: #f87171; }
+.legenda .dourado { color: #fbbf24; }
+
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .separador {
+    width: 100%;
+    height: 2px;
+  }
+  .lado-esquerdo, .lado-direito {
+    width: 100%;
+    align-items: center;
+  }
+  .tabuleiro {
+    justify-content: center;
+  }
+}
